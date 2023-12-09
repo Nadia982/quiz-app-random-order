@@ -1,3 +1,50 @@
+:root{
+    --primary-clr: #009688;
+}
+
 body{
-    background-color: #fff;
+    margin: 0;
+    background-color: var(--primary-clr);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+.custom-box {
+    max-width: 700px;
+    background-color:#fff;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.home-box h1{
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.home-box p {
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+}
+
+.home-box p span {
+    font-weight: 700;
+}
+
+.start-btn {
+    padding: 1rem 2rem;
+    background-color: var(--primary-clr);
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.5rem;
 }
