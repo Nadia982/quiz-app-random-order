@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
-    <div class="home-box custom-box">
-        <h1>Quiz app</h1>
-        <p>Total number of questions: <span class="total-questions">5</span></p>
-        <button type="button" class="start-btn">Start Quiz</button>
+  </head>
+  <body>
+    <div class="home-box custom-box hide">
+      <h1>Quiz app</h1>
+      <p>Total number of questions: <span class="total-questions">5</span></p>
+      <button type="button" class="start-btn btn">Start Quiz</button>
     </div>
     <div class="quiz-box custom-box">
-        <div class="question-number">
-
-        </div>
-        <div class="question-text">
-            
-        </div>
-
+      <div class="question-number">Question 1 of 5</div>
+      <div class="question-text">La matière</div>
+      <div class="option-container">
+        <div class="option">The subject</div>
+        <div class="option">The manner</div>
+        <div class="option">The menu</div>
+        <div class="option">The Earth</div>
+      </div>
+      <div class="next-btn-container">
+        <button type="button" class="next-btn btn">Next</button>
+      </div>
+      <div class="answers-indicator">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    
-    
-</body>
+  </body>
 </html>
