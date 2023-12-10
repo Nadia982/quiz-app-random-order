@@ -29,8 +29,8 @@ body {
 }
 
 .home-box h1 {
-  font-size: 1.5rem;
-  color: #000;
+  font-size: 2rem;
+  color: var(--primary-clr);
   margin-bottom: 1rem;
 }
 
@@ -89,8 +89,8 @@ body {
   cursor: pointer;
 }
 
-.quiz-box .option-container .option:hover{
-    background-color: #aaa;
+.quiz-box .option-container .option:hover {
+  background-color: #aaa;
 }
 
 .quiz-box .answers-indicator {
@@ -127,29 +127,29 @@ body {
   text-align: left;
   padding: 0.5rem 1rem;
 }
-.result-box table td:nth-child(even){
-width: 1%;
+.result-box table td:nth-child(even) {
+  width: 1%;
 }
-.result-box table td:nth-child(odd){
-    width: 30%;
-    }
+.result-box table td:nth-child(odd) {
+  width: 30%;
+}
 .btn-container {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    width: 90%;
-    max-width: 350px;
-    margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 90%;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .btn-container .btn {
-    margin: .1rem;
+  margin: 0.1rem;
 }
 
-.result-box.hide{
-    display: none;
+.result-box.hide {
+  display: none;
 }
 
-.btn:hover{
-    background-color: #007d71;
+.btn:hover {
+  background-color: #007d71;
 }
