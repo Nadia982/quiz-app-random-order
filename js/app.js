@@ -20,12 +20,20 @@ function setAvailableQuestions() {
 function getNewQuestion(){
     //set question number
     questionNumber.innerHTML = `Question ${questionCounter + 1} of ${questions.length}`;
-    
     //set question text
     //get random question
     const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
     questionText.innerHTML = questionIndex.q;
-    console.log(questionText);
+
+    questionCounter++;
+}
+
+function next() {
+    if(questionCounter === questions.length) {
+        console.log("Quiz over");
+    }
+    else{getNewQuestion();
+}
 }
 
 window.onload = function () {
