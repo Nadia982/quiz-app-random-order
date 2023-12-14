@@ -7,6 +7,7 @@ const optionContainer = document.querySelector(".option-container");
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
+let availableOptions = [];
 
 // add the questions to the availableQuestions array
 function setAvailableQuestions() {
@@ -17,23 +18,65 @@ function setAvailableQuestions() {
 }
 
 //set question number, question text and answer options
-function getNewQuestion(){
-    //set question number
-    questionNumber.innerHTML = `Question ${questionCounter + 1} of ${questions.length}`;
-    //set question text
-    //get random question
-    const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
-    questionText.innerHTML = questionIndex.q;
+function getNewQuestion() {
+  //set question number
+  questionNumber.innerHTML = `Question ${questionCounter + 1} of ${
+    questions.length
+  }`;
+  //set question text
+  //get random question
+  const questionIndex =
+    availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
 
-    questionCounter++;
+  questionText.innerHTML = questionIndex.q;
+
+  // get the position of "QuestionIndex" from the "AvailableQuestions" array
+
+  const index1 = availableQuestions.indexOf(questionIndex);
+
+  //remove questionIndex from the ‘AvailableQuestions’ array
+
+  availableQuestions.splice(index1, 1);
+
+  console.log(`The index of the randomly selected available question is ${index1}`);
+
+  // set options
+
+  const optionsLength = questionIndex.options.length;
+
+  // get the length of the list of options
+
+
+
+  // push options into availableOptions array
+
+  for (let i = 0; i < optionsLength; i++) {
+    availableOptions.push([i]);
+  }
+
+  console.log(availableOptions);
+
+  //create options in html
+
+  for (let i = 0; i < optionsLength; i++) {
+    const option = document.createElement("div");
+    option.innerHTML = questionIndex.options[i];
+    option.id = i;
+    option.className = "option";
+    optionContainer.appendChild(option);
+  }
+
+  // CHECK THAT THE FUNCTION ABOVE WORKS IN THE BROWSER CONSOLE
+
+  questionCounter++;
 }
 
 function next() {
-    if(questionCounter === questions.length) {
-        console.log("Quiz over");
-    }
-    else{getNewQuestion();
-}
+  if (questionCounter === questions.length) {
+    console.log("Quiz over");
+  } else {
+    getNewQuestion();
+  }
 }
 
 window.onload = function () {
