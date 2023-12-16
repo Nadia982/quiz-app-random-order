@@ -103,6 +103,31 @@ body {
   }
 }
 
+.quiz-box .option-container .option.correct::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  z-index: -1;
+  animation: slideInLeft .5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  0% { 
+    transform: translateX(-100%); 
+  }
+
+  100% { 
+    transform: translateX(0%); 
+  }
+}
+
+.quiz-box .option-container .option.correct {
+  color: #fff;
+}
 .quiz-box .option-container .option:hover {
   background-color: #aaa;
 }
