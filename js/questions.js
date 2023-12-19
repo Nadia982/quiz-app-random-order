@@ -9,14 +9,14 @@ const questions = [
     id: 2,
     q: "Je crois que",
     options: ["I create", "I am craving", "I believe that", "I cross the..."],
-    answer: 1,
+    answer: 2,
   },
 
   {
     id: 3,
     q: "Court",
     options: ["Short", "Cars", "Cord", "Shard"],
-    answer: 1,
+    answer: 0,
   },
 
   {
@@ -30,13 +30,13 @@ const questions = [
     id: 5,
     q: "Le boeuf",
     options: ["The beef", "The buffer", "The best", "The boast"],
-    answer: 1,
+    answer: 0,
   },
 
   {
     id: 6,
     q: "L'arrière petite fille (f)",
     options: ["Behind the little daughter", "Great niece", "Great granddaughter", "Granddaughter"],
-    answer: 1,
+    answer: 2,
   },
 ];

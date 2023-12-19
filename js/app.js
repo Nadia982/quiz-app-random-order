@@ -25,9 +25,9 @@ function getNewQuestion() {
   }`;
   //set question text
   //get random question
-  const questionIndex =
-    availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
-  questionText.innerHTML = questionIndex.q;
+  const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+  currentQuestion = questionIndex;
+  questionText.innerHTML = currentQuestion.q;
 
   // get the position of "QuestionIndex" from the "AvailableQuestions" array
 
@@ -36,13 +36,10 @@ function getNewQuestion() {
   //remove questionIndex from the ‘AvailableQuestions’ array
 
   availableQuestions.splice(index1, 1);
-  console.log(
-    `The index of the randomly selected available question is ${index1}`
-  );
 
   // set options
   // get the length of the list of options
-  const optionsLength = questionIndex.options.length;
+  const optionsLength = currentQuestion.options.length;
 
   optionContainer.innerHTML = "";
 
@@ -69,12 +66,8 @@ function getNewQuestion() {
 
     availableOptions.splice(index2, 1);
 
-    console.log(optionIndex);
-
-    console.log(availableOptions);
-
     const option = document.createElement("div");
-    option.innerHTML = questionIndex.options[optionIndex];
+    option.innerHTML = currentQuestion.options[optionIndex];
     option.id = optionIndex;
     option.style.animationDelay = animationDelay + "s";
 
@@ -82,11 +75,26 @@ function getNewQuestion() {
 
     option.className = "option";
     optionContainer.appendChild(option);
+    option.setAttribute("onclick", "getResult(this)");
   }
 
   // CHECK THAT THE FUNCTION ABOVE WORKS IN THE BROWSER CONSOLE
 
   questionCounter++;
+}
+
+function getResult(element){
+    const id = parseInt(element.id);
+    //get the answer by comparing the id of the clicked option
+    if(id === currentQuestion.answer){
+        // add green colour if user selects correct option
+        element.classList.add("correct");
+    } else {
+        // add red colour if user selects incorrect option
+        element.classList.add("incorrect");
+        console.log("Answer is wrong");
+    }
+
 }
 
 function next() {
