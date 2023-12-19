@@ -39,4 +39,30 @@ const questions = [
     options: ["Behind the little daughter", "Great niece", "Great granddaughter", "Granddaughter"],
     answer: 2,
   },
+  {
+    id: 7,
+    q: "Croire",
+    options: ["To believe", "To cruise", "To create", "Croissant"],
+    answer: 0,
+  },
+
+  {
+    id: 8,
+    q: "De marque",
+    options: ["Designer", "Marked", "Damaged", "Demarcated"],
+    answer: 0,
+  },
+  {
+    id: 9,
+    q: "La fraise",
+    options: ["The strawberry", "The phrase", "The grapefruit", "The fruit"],
+    answer: 0,
+  },
+  {
+    id: 10,
+    q: "Les frites (f)",
+    options: ["Chips", "Fried", "Fretting", "Cakes"],
+    answer: 0,
+  },
+  
 ];
