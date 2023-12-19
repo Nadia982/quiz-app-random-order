@@ -125,7 +125,19 @@ body {
   }
 }
 
-.quiz-box .option-container .option.correct {
+.quiz-box .option-container .option.incorrect::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  z-index: -1;
+  animation: slideInLeft .5s ease forwards;
+}
+
+.quiz-box .option-container .option.correct, .quiz-box .option-container .option.incorrect {
   color: #fff;
 }
 .quiz-box .option-container .option:hover {
