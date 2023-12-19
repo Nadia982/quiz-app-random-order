@@ -3,7 +3,7 @@ const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
 
 const optionContainer = document.querySelector(".option-container");
-
+const answersIndicatorContainer = document.querySelector(".answers-indicator");
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
@@ -89,9 +89,14 @@ function getResult(element){
     if(id === currentQuestion.answer){
         // add green colour if user selects correct option
         element.classList.add("correct");
+        //add a tick mark to the answer indicator
+updateAnswerIndicator("correct");
+
     } else {
         // add red colour if user selects incorrect option
         element.classList.add("incorrect");
+        //add a cross mark to the answer indicator
+updateAnswerIndicator("incorrect");
 
         //if answer is incorrect then show the correct answer
         const optionsLength = optionContainer.children.length;
@@ -113,6 +118,19 @@ function unclickableOptions() {
     }
 }
 
+function answersIndicator(){
+  const totalQuestion = questions.length;
+  for(let i=0; i< totalQuestion; i++){
+    const indicator = document.createElement("div");
+  answersIndicatorContainer.appendChild(indicator);
+  }
+}
+
+function updateAnswerIndicator(markType){
+  console.log(markType);
+  answersIndicatorContainer.children[questionCounter-1].classList.add(markType);
+}
+
 function next() {
   if (questionCounter === questions.length) {
     console.log("Quiz over");
@@ -124,4 +142,6 @@ function next() {
 window.onload = function () {
   setAvailableQuestions();
   getNewQuestion();
+    // to create indicator of answers
+    answersIndicator();
 };

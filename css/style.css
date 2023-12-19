@@ -163,6 +163,22 @@ body {
   margin-top: 0.7rem;
 }
 
+.quiz-box .answers-indicator div.correct {
+  background-color: rgb(34, 177, 76);
+  background-image: url("../images/correct.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.quiz-box .answers-indicator div.incorrect {
+  background-color: rgba(255,0,0);
+  background-image: url("../images/incorrect.png");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .result-box {
   text-align: center;
 }
