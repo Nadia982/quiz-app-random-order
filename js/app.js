@@ -92,9 +92,25 @@ function getResult(element){
     } else {
         // add red colour if user selects incorrect option
         element.classList.add("incorrect");
-        console.log("Answer is wrong");
-    }
 
+        //if answer is incorrect then show the correct answer
+        const optionsLength = optionContainer.children.length;
+        for(let i = 0; i < optionsLength; i++) {
+            setTimeout(() => {
+            if(parseInt(optionContainer.children[i].id) === currentQuestion.answer){
+                optionContainer.children[i].classList.add("correct");}
+            }, 400)
+        }
+    }
+    unclickableOptions()
+}
+
+//make other options unclickable once user has selected an option
+function unclickableOptions() {
+    const optionsLength = optionContainer.children.length;
+    for(let i = 0; i < optionsLength; i++) {
+    optionContainer.children[i].classList.add('already-answered');
+    }
 }
 
 function next() {
