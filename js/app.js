@@ -8,6 +8,8 @@ let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
 let availableOptions = [];
+let correctAnswers = 0;
+let attempt = 0;
 
 // add the questions to the availableQuestions array
 function setAvailableQuestions() {
@@ -91,7 +93,7 @@ function getResult(element){
         element.classList.add("correct");
         //add a tick mark to the answer indicator
 updateAnswerIndicator("correct");
-
+correctAnswers++;
     } else {
         // add red colour if user selects incorrect option
         element.classList.add("incorrect");
@@ -107,6 +109,7 @@ updateAnswerIndicator("incorrect");
             }, 400)
         }
     }
+    attempt++;
     unclickableOptions()
 }
 
