@@ -160,6 +160,21 @@ function quizOver() {
   quizBox.classList.add("hide");
   //show resultBox
   resultBox.classList.remove("hide");
+  quizResult();
+}
+
+//get the quiz result
+function quizResult() {
+  resultBox.querySelector(".total-question").innerHTML = questions.length;
+  resultBox.querySelector(".total-attempt").innerHTML = attempt;
+  resultBox.querySelector(".total-correct").innerHTML = correctAnswers;
+  resultBox.querySelector(".total-incorrect").innerHTML =
+    attempt - correctAnswers;
+  const percentage = (correctAnswers / questions.length) * 100;
+  resultBox.querySelector(".percentage").innerHTML =
+    percentage.toFixed(2) + "%";
+  resultBox.querySelector(".total-score").innerHTML =
+    correctAnswers + "/" + questions.length;
 }
 
 window.onload = function () {
