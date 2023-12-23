@@ -4,6 +4,10 @@ const questionText = document.querySelector(".question-text");
 
 const optionContainer = document.querySelector(".option-container");
 const answersIndicatorContainer = document.querySelector(".answers-indicator");
+const homeBox = document.querySelector(".home-box");
+const quizBox = document.querySelector(".quiz-box");
+const resultBox = document.querySelector(".result-box");
+
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
@@ -27,7 +31,8 @@ function getNewQuestion() {
   }`;
   //set question text
   //get random question
-  const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+  const questionIndex =
+    availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
   currentQuestion = questionIndex;
   questionText.innerHTML = currentQuestion.q;
 
@@ -85,66 +90,81 @@ function getNewQuestion() {
   questionCounter++;
 }
 
-function getResult(element){
-    const id = parseInt(element.id);
-    //get the answer by comparing the id of the clicked option
-    if(id === currentQuestion.answer){
-        // add green colour if user selects correct option
-        element.classList.add("correct");
-        //add a tick mark to the answer indicator
-updateAnswerIndicator("correct");
-correctAnswers++;
-    } else {
-        // add red colour if user selects incorrect option
-        element.classList.add("incorrect");
-        //add a cross mark to the answer indicator
-updateAnswerIndicator("incorrect");
+function getResult(element) {
+  const id = parseInt(element.id);
+  //get the answer by comparing the id of the clicked option
+  if (id === currentQuestion.answer) {
+    // add green colour if user selects correct option
+    element.classList.add("correct");
+    //add a tick mark to the answer indicator
+    updateAnswerIndicator("correct");
+    correctAnswers++;
+    console.log("correct: " + correctAnswers);
+  } else {
+    // add red colour if user selects incorrect option
+    element.classList.add("incorrect");
+    //add a cross mark to the answer indicator
+    updateAnswerIndicator("incorrect");
 
-        //if answer is incorrect then show the correct answer
-        const optionsLength = optionContainer.children.length;
-        for(let i = 0; i < optionsLength; i++) {
-            setTimeout(() => {
-            if(parseInt(optionContainer.children[i].id) === currentQuestion.answer){
-                optionContainer.children[i].classList.add("correct");}
-            }, 400)
+    //if answer is incorrect then show the correct answer
+    const optionsLength = optionContainer.children.length;
+    for (let i = 0; i < optionsLength; i++) {
+      setTimeout(() => {
+        if (
+          parseInt(optionContainer.children[i].id) === currentQuestion.answer
+        ) {
+          optionContainer.children[i].classList.add("correct");
         }
+      }, 400);
     }
-    attempt++;
-    unclickableOptions()
+  }
+  attempt++;
+  unclickableOptions();
 }
 
 //make other options unclickable once user has selected an option
 function unclickableOptions() {
-    const optionsLength = optionContainer.children.length;
-    for(let i = 0; i < optionsLength; i++) {
-    optionContainer.children[i].classList.add('already-answered');
-    }
-}
-
-function answersIndicator(){
-  const totalQuestion = questions.length;
-  for(let i=0; i< totalQuestion; i++){
-    const indicator = document.createElement("div");
-  answersIndicatorContainer.appendChild(indicator);
+  const optionsLength = optionContainer.children.length;
+  for (let i = 0; i < optionsLength; i++) {
+    optionContainer.children[i].classList.add("already-answered");
   }
 }
 
-function updateAnswerIndicator(markType){
+function answersIndicator() {
+  answersIndicatorContainer.innerHTML = "";
+  const totalQuestion = questions.length;
+  for (let i = 0; i < totalQuestion; i++) {
+    const indicator = document.createElement("div");
+    answersIndicatorContainer.appendChild(indicator);
+  }
+}
+
+function updateAnswerIndicator(markType) {
   console.log(markType);
-  answersIndicatorContainer.children[questionCounter-1].classList.add(markType);
+  answersIndicatorContainer.children[questionCounter - 1].classList.add(
+    markType
+  );
 }
 
 function next() {
   if (questionCounter === questions.length) {
     console.log("Quiz over");
+    quizOver();
   } else {
     getNewQuestion();
   }
 }
 
+function quizOver() {
+  //hide quizBox
+  quizBox.classList.add("hide");
+  //show resultBox
+  resultBox.classList.remove("hide");
+}
+
 window.onload = function () {
   setAvailableQuestions();
   getNewQuestion();
-    // to create indicator of answers
-    answersIndicator();
+  // to create indicator of answers
+  answersIndicator();
 };
