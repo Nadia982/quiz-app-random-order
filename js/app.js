@@ -48,13 +48,12 @@ function getNewQuestion() {
 
   // show question image if "img" property exists
 
-if(currentQuestion.hasOwnProperty("img")){
-  console.log(currentQuestion.img);
-  const img = document.createElement("img")
-  img.src = currentQuestion.img;
-  questionText.appendChild(img);
-}
-
+  if (currentQuestion.hasOwnProperty("img")) {
+    console.log(currentQuestion.img);
+    const img = document.createElement("img");
+    img.src = currentQuestion.img;
+    questionText.appendChild(img);
+  }
 
   // set options
   // get the length of the list of options
