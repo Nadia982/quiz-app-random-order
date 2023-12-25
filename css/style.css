@@ -160,10 +160,6 @@ body {
   animation: slideInLeft .5s ease forwards;
 }
 
-/* .quiz-box .option-container .option.incorrect {
-  font-weight: bold;
-} */
-
 .quiz-box .option-container .option:hover {
   background-color: #aaa;
 }
