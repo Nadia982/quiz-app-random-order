@@ -69,8 +69,11 @@ body {
 }
 
 .next-btn {
-  /* margin-top: 0; */
   margin-bottom: 0.7rem;
+}
+
+.next-btn.hide {
+  display: none;
 }
 
 .quiz-box .question-number {
@@ -108,7 +111,6 @@ body {
 
 .quiz-box .option-container .option.already-answered{
   pointer-events: none;
-  
 }
 
 @keyframes fadeIn {
@@ -243,4 +245,14 @@ body {
 
 .btn:hover {
   background-color: #007d71;
+}
+
+@media(max-width: 768px){
+  .result-box .btn {
+    margin-bottom: 1 rem;
+  }
+
+  body {
+    padding: 1rem;
+  }
 }

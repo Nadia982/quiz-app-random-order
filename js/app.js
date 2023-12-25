@@ -7,6 +7,7 @@ const answersIndicatorContainer = document.querySelector(".answers-indicator");
 const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
+// const nextButton = document.querySelector(".next-btn");
 
 let questionCounter = 0;
 let currentQuestion;
@@ -25,6 +26,7 @@ function setAvailableQuestions() {
 
 //set question number, question text and answer options
 function getNewQuestion() {
+  // nextButton.classList.add("hide");
   //set question number
   questionNumber.innerHTML = `Question ${questionCounter + 1} of ${
     questions.length
@@ -127,6 +129,7 @@ function unclickableOptions() {
   }
 }
 
+//creating answersIndicator box, and answer indicator circles for each question
 function answersIndicator() {
   answersIndicatorContainer.innerHTML = "";
   const totalQuestion = questions.length;
@@ -189,7 +192,7 @@ function tryAgainQuiz() {
   startQuiz();
 }
 
-function goToHome(){
+function goToHome() {
   //hide result box
   resultBox.classList.add("hide");
   // show home box
@@ -197,11 +200,10 @@ function goToHome(){
   resetQuiz();
 }
 
-
 function startQuiz() {
   // hide home box
   homeBox.classList.add("hide");
-  //hide result box 
+  //hide result box
   resultBox.classList.add("hide");
   // show quiz box
   quizBox.classList.remove("hide");
@@ -212,6 +214,6 @@ function startQuiz() {
   answersIndicator();
 }
 
-window.onload = function(){
+window.onload = function () {
   homeBox.querySelector(".total-questions").innerHTML = questions.length;
-}
+};
