@@ -46,6 +46,16 @@ function getNewQuestion() {
 
   availableQuestions.splice(index1, 1);
 
+  // show question image if "img" property exists
+
+if(currentQuestion.hasOwnProperty("img")){
+  console.log(currentQuestion.img);
+  const img = document.createElement("img")
+  img.src = currentQuestion.img;
+  questionText.appendChild(img);
+}
+
+
   // set options
   // get the length of the list of options
   const optionsLength = currentQuestion.options.length;
