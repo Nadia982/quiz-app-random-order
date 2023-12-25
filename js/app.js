@@ -7,7 +7,7 @@ const answersIndicatorContainer = document.querySelector(".answers-indicator");
 const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
-// const nextButton = document.querySelector(".next-btn");
+const nextButton = document.querySelector(".next-btn");
 
 let questionCounter = 0;
 let currentQuestion;
@@ -26,7 +26,7 @@ function setAvailableQuestions() {
 
 //set question number, question text and answer options
 function getNewQuestion() {
-  // nextButton.classList.add("hide");
+  nextButton.classList.add("hide");
   //set question number
   questionNumber.innerHTML = `Question ${questionCounter + 1} of ${
     questions.length
@@ -119,6 +119,7 @@ function getResult(element) {
   }
   attempt++;
   unclickableOptions();
+  nextButton.classList.remove("hide");
 }
 
 //make other options unclickable once user has selected an option
