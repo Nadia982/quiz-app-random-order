@@ -189,6 +189,15 @@ function tryAgainQuiz() {
   startQuiz();
 }
 
+function goToHome(){
+  //hide result box
+  resultBox.classList.add("hide");
+  // show home box
+  homeBox.classList.remove("hide");
+  resetQuiz();
+}
+
+
 function startQuiz() {
   // hide home box
   homeBox.classList.add("hide");
