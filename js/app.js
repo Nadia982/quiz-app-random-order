@@ -56,8 +56,6 @@ function getNewQuestion() {
     availableOptions.push(i);
   }
 
-  console.log(availableOptions);
-
   //create options in html
   let animationDelay = 0.1;
 
@@ -99,7 +97,6 @@ function getResult(element) {
     //add a tick mark to the answer indicator
     updateAnswerIndicator("correct");
     correctAnswers++;
-    console.log("correct: " + correctAnswers);
   } else {
     // add red colour if user selects incorrect option
     element.classList.add("incorrect");
@@ -140,7 +137,6 @@ function answersIndicator() {
 }
 
 function updateAnswerIndicator(markType) {
-  console.log(markType);
   answersIndicatorContainer.children[questionCounter - 1].classList.add(
     markType
   );
@@ -148,7 +144,6 @@ function updateAnswerIndicator(markType) {
 
 function next() {
   if (questionCounter === questions.length) {
-    console.log("Quiz over");
     quizOver();
   } else {
     getNewQuestion();
@@ -177,27 +172,33 @@ function quizResult() {
     correctAnswers + "/" + questions.length;
 }
 
-function resetQuiz(){
+function resetQuiz() {
   questionCounter = 0;
   correctAnswers = 0;
   attempt = 0;
 }
 
-function tryAgainQuiz(){
-
+function tryAgainQuiz() {
   //hide the result box
   resultBox.classList.add("hide");
 
   //show the quiz box
   quizBox.classList.remove("hide");
-  
+
   resetQuiz();
+  startQuiz();
 }
 
+function startQuiz() {
+  // hide home box
+  homeBox.classList.add("hide");
+  //hide result box 
+  resultBox.classList.add("hide");
+  // show quiz box
+  quizBox.classList.remove("hide");
 
-window.onload = function () {
   setAvailableQuestions();
   getNewQuestion();
   // to create indicator of answers
   answersIndicator();
-};
+}

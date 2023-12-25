@@ -14,9 +14,9 @@
     <div class="home-box custom-box">
       <h1>Quiz app</h1>
       <p>Total number of questions: <span class="total-questions"></span></p>
-      <button type="button" class="start-btn btn">Start Quiz</button>
+      <button type="button" class="start-btn btn" onclick = "startQuiz()">Start Quiz</button>
     </div>
-    <div class="quiz-box custom-box">
+    <div class="quiz-box custom-box hide">
       <div class="question-number"></div>
       <div class="question-text"></div>
       <div class="option-container">
@@ -27,7 +27,7 @@
       <div class="answers-indicator">
       </div>
     </div>
-    <div class="result-box custom-box">
+    <div class="result-box custom-box hide">
       <h1>Quiz results</h1>
       <table>
         <tr>

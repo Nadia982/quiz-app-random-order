@@ -222,6 +222,10 @@ body {
   display: none;
 }
 
+.quiz-box.hide{
+  display: none;
+}
+
 .btn:hover {
   background-color: #007d71;
 }
