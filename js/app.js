@@ -8,6 +8,7 @@ const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const nextButton = document.querySelector(".next-btn");
+const questionLimit = 8;
 
 let questionCounter = 0;
 let currentQuestion;
@@ -29,7 +30,7 @@ function getNewQuestion() {
   nextButton.classList.add("hide");
   //set question number
   questionNumber.innerHTML = `Question ${questionCounter + 1} of ${
-    questions.length
+    questionLimit
   }`;
   //set question text
   //get random question
@@ -142,7 +143,7 @@ function unclickableOptions() {
 //creating answersIndicator box, and answer indicator circles for each question
 function answersIndicator() {
   answersIndicatorContainer.innerHTML = "";
-  const totalQuestion = questions.length;
+  const totalQuestion = questionLimit;
   for (let i = 0; i < totalQuestion; i++) {
     const indicator = document.createElement("div");
     answersIndicatorContainer.appendChild(indicator);
@@ -156,7 +157,7 @@ function updateAnswerIndicator(markType) {
 }
 
 function next() {
-  if (questionCounter === questions.length) {
+  if (questionCounter === questionLimit) {
     quizOver();
   } else {
     getNewQuestion();
@@ -173,22 +174,23 @@ function quizOver() {
 
 //get the quiz result
 function quizResult() {
-  resultBox.querySelector(".total-question").innerHTML = questions.length;
-  resultBox.querySelector(".total-attempt").innerHTML = attempt;
-  resultBox.querySelector(".total-correct").innerHTML = correctAnswers;
-  resultBox.querySelector(".total-incorrect").innerHTML =
+  resultBox.querySelector(".total-question").innerHTML = questionLimit;
+  resultBox.querySelector(".total-attempts").innerHTML = attempt;
+  resultBox.querySelector(".correct-answers").innerHTML = correctAnswers;
+  resultBox.querySelector(".wrong-answers").innerHTML =
     attempt - correctAnswers;
-  const percentage = (correctAnswers / questions.length) * 100;
-  resultBox.querySelector(".percentage").innerHTML =
+  const percentage = (correctAnswers / questionLimit ) * 100;
+  resultBox.querySelector(".percent-correct").innerHTML =
     percentage.toFixed(2) + "%";
   resultBox.querySelector(".total-score").innerHTML =
-    correctAnswers + "/" + questions.length;
+    correctAnswers + "/" + questionLimit ;
 }
 
 function resetQuiz() {
   questionCounter = 0;
   correctAnswers = 0;
   attempt = 0;
+  availableQuestions = [];
 }
 
 function tryAgainQuiz() {
@@ -225,5 +227,5 @@ function startQuiz() {
 }
 
 window.onload = function () {
-  homeBox.querySelector(".total-questions").innerHTML = questions.length;
+  homeBox.querySelector(".total-questions").innerHTML = questionLimit;
 };
