@@ -177,6 +177,24 @@ function quizResult() {
     correctAnswers + "/" + questions.length;
 }
 
+function resetQuiz(){
+  questionCounter = 0;
+  correctAnswers = 0;
+  attempt = 0;
+}
+
+function tryAgainQuiz(){
+
+  //hide the result box
+  resultBox.classList.add("hide");
+
+  //show the quiz box
+  quizBox.classList.remove("hide");
+  
+  resetQuiz();
+}
+
+
 window.onload = function () {
   setAvailableQuestions();
   getNewQuestion();
