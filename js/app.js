@@ -111,6 +111,7 @@ function getNewQuestion() {
 }
 
 function getResult(element) {
+  unclickableOptions();
   const id = parseInt(element.id);
   //get the answer by comparing the id of the clicked option
   if (id === currentQuestion.answer) {

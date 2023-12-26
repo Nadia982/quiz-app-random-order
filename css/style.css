@@ -47,6 +47,11 @@ button.option{
   text-align: left;
 }
 
+button:disabled{
+/* background: inherit; */
+color: inherit;
+}
+
 .home-box h1 {
   font-size: 2rem;
   color: var(--primary-clr);
