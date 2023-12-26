@@ -88,12 +88,20 @@ function getNewQuestion() {
     option.innerHTML = currentQuestion.options[optionIndex];
     option.id = optionIndex;
     option.style.animationDelay = animationDelay + "s";
+    option.tabIndex = i + 1;
+    console.log(option.tabIndex);
 
     animationDelay = animationDelay + 0.1;
 
     option.className = "option";
     optionContainer.appendChild(option);
     option.setAttribute("onclick", "getResult(this)");
+
+    option.addEventListener("keydown", function (e) {
+      if (e.key == "Enter") {
+        getResult(this);
+      }
+    });
   }
   questionCounter++;
 }
@@ -129,22 +137,14 @@ function getResult(element) {
   unclickableOptions();
   document.addEventListener("keydown", addShortcut);
   nextButton.classList.remove("hide");
-
 }
 
 //add shortcut key for the enter key to go to the next question
 function addShortcut(e) {
-  if(e.key === "Enter"){
+  if (e.key === "Enter") {
     next();
-    // document.removeEventListener("keydown", addShortcut);
   }
-
-  // setTimeout(function(){
-  //   if (e.key === "Enter") {
-  //     next();
-  //   }}, 800)
-  //   document.removeEventListener("keydown", addShortcut)
-  };
+}
 
 //make other options unclickable once user has selected an option
 function unclickableOptions() {
@@ -175,8 +175,9 @@ function next() {
   if (questionCounter === questionLimit) {
     quizOver();
   } else {
-    setTimeout(function(){
-      getNewQuestion()}, 900);
+    setTimeout(function () {
+      getNewQuestion();
+    }, 800);
   }
 }
 
