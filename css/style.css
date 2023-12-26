@@ -273,4 +273,8 @@ color: inherit;
   body {
     padding: 1rem;
   }
+
+  .custom-box {
+    margin: 1rem auto;
+  }
 }
