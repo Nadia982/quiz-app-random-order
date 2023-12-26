@@ -28,10 +28,11 @@ function setAvailableQuestions() {
 //set question number, question text and answer options
 function getNewQuestion() {
   nextButton.classList.add("hide");
+
   //set question number
-  questionNumber.innerHTML = `Question ${questionCounter + 1} of ${
-    questionLimit
-  }`;
+  questionNumber.innerHTML = `Question ${
+    questionCounter + 1
+  } of ${questionLimit}`;
   //set question text
   //get random question
   const questionIndex =
@@ -94,9 +95,6 @@ function getNewQuestion() {
     optionContainer.appendChild(option);
     option.setAttribute("onclick", "getResult(this)");
   }
-
-  // CHECK THAT THE FUNCTION ABOVE WORKS IN THE BROWSER CONSOLE
-
   questionCounter++;
 }
 
@@ -129,8 +127,24 @@ function getResult(element) {
   }
   attempt++;
   unclickableOptions();
+  document.addEventListener("keydown", addShortcut);
   nextButton.classList.remove("hide");
+
 }
+
+//add shortcut key for the enter key to go to the next question
+function addShortcut(e) {
+  if(e.key === "Enter"){
+    next();
+    // document.removeEventListener("keydown", addShortcut);
+  }
+
+  // setTimeout(function(){
+  //   if (e.key === "Enter") {
+  //     next();
+  //   }}, 800)
+  //   document.removeEventListener("keydown", addShortcut)
+  };
 
 //make other options unclickable once user has selected an option
 function unclickableOptions() {
@@ -157,10 +171,12 @@ function updateAnswerIndicator(markType) {
 }
 
 function next() {
+  document.removeEventListener("keydown", addShortcut);
   if (questionCounter === questionLimit) {
     quizOver();
   } else {
-    getNewQuestion();
+    setTimeout(function(){
+      getNewQuestion()}, 900);
   }
 }
 
@@ -179,11 +195,11 @@ function quizResult() {
   resultBox.querySelector(".correct-answers").innerHTML = correctAnswers;
   resultBox.querySelector(".wrong-answers").innerHTML =
     attempt - correctAnswers;
-  const percentage = (correctAnswers / questionLimit ) * 100;
+  const percentage = (correctAnswers / questionLimit) * 100;
   resultBox.querySelector(".percent-correct").innerHTML =
     percentage.toFixed(2) + "%";
   resultBox.querySelector(".total-score").innerHTML =
-    correctAnswers + "/" + questionLimit ;
+    correctAnswers + "/" + questionLimit;
 }
 
 function resetQuiz() {
