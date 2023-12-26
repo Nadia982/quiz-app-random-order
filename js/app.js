@@ -8,7 +8,7 @@ const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const nextButton = document.querySelector(".next-btn");
-const questionLimit = 8;
+const questionLimit = 5;
 
 let questionCounter = 0;
 let currentQuestion;
@@ -84,7 +84,7 @@ function getNewQuestion() {
 
     availableOptions.splice(index2, 1);
 
-    const option = document.createElement("div");
+    const option = document.createElement("button");
     option.innerHTML = currentQuestion.options[optionIndex];
     option.id = optionIndex;
     option.style.animationDelay = animationDelay + "s";
@@ -97,11 +97,15 @@ function getNewQuestion() {
     optionContainer.appendChild(option);
     option.setAttribute("onclick", "getResult(this)");
 
-    option.addEventListener("keydown", function (e) {
+    option.addEventListener("keydown", pressEnterToGetResult);
+
+    function pressEnterToGetResult(e) {
       if (e.key == "Enter") {
+        option.removeEventListener("keydown", pressEnterToGetResult);
         getResult(this);
+        unclickableOptions();
       }
-    });
+    }
   }
   questionCounter++;
 }
@@ -115,6 +119,8 @@ function getResult(element) {
     //add a tick mark to the answer indicator
     updateAnswerIndicator("correct");
     correctAnswers++;
+
+    // availableOptions.removeEventListener("keydown", pressEnterToGetResult);
   } else {
     // add red colour if user selects incorrect option
     element.classList.add("incorrect");
@@ -134,13 +140,13 @@ function getResult(element) {
     }
   }
   attempt++;
-  unclickableOptions();
-  document.addEventListener("keydown", addShortcut);
+  // document.addEventListener("keydown", pressEnterForNextQu);
+  // next();
   nextButton.classList.remove("hide");
 }
 
-//add shortcut key for the enter key to go to the next question
-function addShortcut(e) {
+//add shortcut key for the return key to go to the next question
+function pressEnterForNextQu(e) {
   if (e.key === "Enter") {
     next();
   }
@@ -151,6 +157,7 @@ function unclickableOptions() {
   const optionsLength = optionContainer.children.length;
   for (let i = 0; i < optionsLength; i++) {
     optionContainer.children[i].classList.add("already-answered");
+    optionContainer.children[i].setAttribute("disabled", "");
   }
 }
 
@@ -171,13 +178,13 @@ function updateAnswerIndicator(markType) {
 }
 
 function next() {
-  document.removeEventListener("keydown", addShortcut);
-  if (questionCounter === questionLimit) {
+  // document.removeEventListener("keydown", pressEnterForNextQu);
+  if (questionCounter >= questionLimit) {
     quizOver();
   } else {
     setTimeout(function () {
       getNewQuestion();
-    }, 800);
+    }, 1000);
   }
 }
 

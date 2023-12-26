@@ -40,6 +40,13 @@ body {
   display: none;
 }
 
+button.option{
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: left;
+}
+
 .home-box h1 {
   font-size: 2rem;
   color: var(--primary-clr);
