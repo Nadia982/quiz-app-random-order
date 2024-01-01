@@ -183,9 +183,7 @@ function next() {
   if (questionCounter >= questionLimit) {
     quizOver();
   } else {
-    setTimeout(function () {
       getNewQuestion();
-    }, 1000);
   }
 }
 

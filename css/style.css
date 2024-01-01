@@ -80,12 +80,18 @@ color: inherit;
   display: inline-block;
 }
 
+.end-container{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .next-btn {
   margin-bottom: 0.7rem;
 }
 
 .next-btn.hide {
-  display: none;
+  visibility: hidden;
 }
 
 .quiz-box .question-number {
@@ -182,10 +188,6 @@ color: inherit;
 
 .quiz-box .option-container .option:hover {
   background-color: #aaa;
-}
-
-.quiz-box .answers-indicator {
-  border-top: 1px solid #ccc;
 }
 
 .quiz-box .answers-indicator div {

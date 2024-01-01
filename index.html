@@ -14,19 +14,22 @@
     <div class="home-box custom-box">
       <h1>Quiz app</h1>
       <p>Total number of questions: <span class="total-questions"></span></p>
-      <button type="button" class="start-btn btn" onclick = "startQuiz()">Start Quiz</button>
+      <button type="button" class="start-btn btn" onclick="startQuiz()">
+        Start Quiz
+      </button>
     </div>
     <div class="quiz-box custom-box hide">
       <div class="question-number"></div>
       <div class="question-text" lang="fr"></div>
-      <div class="option-container">
-      </div>
-     
-      <div class="answers-indicator">
-      </div>
+      <div class="option-container"></div>
+      <div class="end-container">
       <div class="next-btn-container">
-        <button type="button" class="next-btn btn" onclick="next()">Next</button>
+        <button type="button" class="next-btn btn" onclick="next()">
+          Next
+        </button>
       </div>
+      <div class="answers-indicator"></div>
+    </div>
     </div>
     <div class="result-box custom-box hide">
       <h1>Quiz results</h1>
@@ -57,8 +60,12 @@
         </tr>
       </table>
       <div class="btn-container">
-        <button type="button" class="btn" onclick="tryAgainQuiz()">Try again</button>
-        <button type="button" class="btn" onclick="goToHome()">Go to home</button>
+        <button type="button" class="btn" onclick="tryAgainQuiz()">
+          Try again
+        </button>
+        <button type="button" class="btn" onclick="goToHome()">
+          Go to home
+        </button>
       </div>
     </div>
     <script src="js/questions.js"></script>
