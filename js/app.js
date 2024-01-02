@@ -27,7 +27,6 @@ function setAvailableQuestions() {
 //set question number, question text and answer options
 function getNewQuestion() {
   nextButton.classList.add("hide");
-
   //set question number
   questionNumber.innerHTML = `Question ${
     questionCounter + 1
@@ -39,7 +38,7 @@ function getNewQuestion() {
   currentQuestion = questionIndex;
 //set question text
   questionText.innerHTML = currentQuestion.q;
-
+  speak();
   // get the position of "QuestionIndex" from the "AvailableQuestions" array
 
   const index1 = availableQuestions.indexOf(questionIndex);
