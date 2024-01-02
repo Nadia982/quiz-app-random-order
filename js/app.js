@@ -38,7 +38,8 @@ function getNewQuestion() {
   currentQuestion = questionIndex;
 //set question text
   questionText.innerHTML = currentQuestion.q;
-  speak();
+  setTimeout(speak, 500);
+
   // get the position of "QuestionIndex" from the "AvailableQuestions" array
 
   const index1 = availableQuestions.indexOf(questionIndex);
