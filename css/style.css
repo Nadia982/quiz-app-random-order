@@ -103,6 +103,12 @@ color: inherit;
   line-height: var(--line-height);
 }
 
+.question-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
 .quiz-box .question-text {
   font-size: 1.2rem;
   color: #000;
@@ -116,6 +122,13 @@ color: inherit;
   max-width: 100%;
   display: block;
   margin-top: 1rem;
+}
+
+#read-btn{
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  gap: .7rem;  
 }
 
 .quiz-box .option-container .option {
