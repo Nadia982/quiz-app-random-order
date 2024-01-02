@@ -1,6 +1,6 @@
 :root {
   --primary-clr: #009688;
-  --line-height: 1.3;
+  /* --line-height: 1.3; */
 }
 
 body {
@@ -40,16 +40,16 @@ body {
   display: none;
 }
 
-button.option{
+button.option {
   display: block;
   width: 100%;
   border: none;
   text-align: left;
 }
 
-button:disabled{
-/* background: inherit; */
-color: inherit;
+button:disabled {
+  /* background: inherit; */
+  color: inherit;
 }
 
 .home-box h1 {
@@ -80,7 +80,7 @@ color: inherit;
   display: inline-block;
 }
 
-.end-container{
+.quiz-box .next-and-answer-indicator-container {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -103,17 +103,16 @@ color: inherit;
   line-height: var(--line-height);
 }
 
-.question-container {
+.quiz-box .question-container {
   display: flex;
-  justify-content: flex-start;
   gap: 2rem;
   margin-bottom: 1rem;
 }
 .quiz-box .question-text {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #000;
   line-height: var(--line-height);
-  padding: 1rem 0;
+  padding: .8rem 0;
   margin: 0;
   font-weight: 700;
 }
@@ -124,11 +123,13 @@ color: inherit;
   margin-top: 1rem;
 }
 
-#read-btn{
-  padding: .5rem;
+#read-btn {
+  text-align: center;
+  padding: 0.5rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: .7rem;  
+  gap: 0.7rem;
 }
 
 #voice-select {
@@ -145,21 +146,21 @@ color: inherit;
   cursor: pointer;
   opacity: 0;
   animation: fadeIn 0.3s forwards;
-  position: relative; 
+  position: relative;
   overflow: hidden;
 }
 
-.quiz-box .option-container .option.already-answered{
+.quiz-box .option-container .option.already-answered {
   pointer-events: none;
 }
 
 @keyframes fadeIn {
   0% {
-    opacity: 0
+    opacity: 0;
   }
 
-100% {
-    opacity: 1
+  100% {
+    opacity: 1;
   }
 }
 
@@ -172,21 +173,20 @@ color: inherit;
   width: 100%;
   background-color: green;
   opacity: 0.3;
-  animation: slideInLeft .5s ease forwards;
+  animation: slideInLeft 0.5s ease forwards;
 }
 
-.quiz-box .option-container .option.correct
-{
+.quiz-box .option-container .option.correct {
   font-weight: bold;
 }
 
 @keyframes slideInLeft {
-  0%{ 
-    transform: translateX(-100%); 
+  0% {
+    transform: translateX(-100%);
   }
 
-  100%{ 
-    transform: translateX(0%); 
+  100% {
+    transform: translateX(0%);
   }
 }
 
@@ -199,7 +199,7 @@ color: inherit;
   width: 100%;
   background-color: red;
   opacity: 0.3;
-  animation: slideInLeft .5s ease forwards;
+  animation: slideInLeft 0.5s ease forwards;
 }
 
 .quiz-box .option-container .option:hover {
@@ -225,7 +225,7 @@ color: inherit;
 }
 
 .quiz-box .answers-indicator div.incorrect {
-  background-color: rgba(255,0,0);
+  background-color: rgba(255, 0, 0);
   background-image: url("../images/incorrect.png");
   background-size: 60%;
   background-repeat: no-repeat;
@@ -258,7 +258,7 @@ color: inherit;
 .result-box table td:nth-child(odd) {
   width: 30%;
 }
-.btn-container {
+.results-btn-container {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -275,7 +275,7 @@ color: inherit;
   display: none;
 }
 
-.quiz-box.hide{
+.quiz-box.hide {
   display: none;
 }
 
@@ -283,7 +283,7 @@ color: inherit;
   background-color: #007d71;
 }
 
-@media(max-width: 768px){
+@media (max-width: 768px) {
   .result-box .btn {
     margin-bottom: 1 rem;
   }
@@ -295,4 +295,24 @@ color: inherit;
   .custom-box {
     margin: 1rem auto;
   }
+
+  .quiz-box .end-container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .quiz-box .question-container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #read-btn {
+    width: 85%;
+    margin: 0 auto;
+    gap: 0.4rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1rem;
+}
 }

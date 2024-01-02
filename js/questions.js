@@ -60,7 +60,7 @@ const questions = [
   },
   {
     id: 10,
-    q: "Les frites (f)",
+    q: "Les frites (féminin)",
     options: ["Chips", "Fried", "Fretting", "Cakes"],
     answer: 0,
   },
