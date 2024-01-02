@@ -1,5 +1,4 @@
 const questionNumber = document.querySelector(".question-number");
-
 const questionText = document.querySelector(".question-text");
 
 const optionContainer = document.querySelector(".option-container");
@@ -50,12 +49,12 @@ function getNewQuestion() {
 
   // show question image if "img" property exists
 
-  if (currentQuestion.hasOwnProperty("img")) {
-    console.log(currentQuestion.img);
-    const img = document.createElement("img");
-    img.src = currentQuestion.img;
-    questionText.appendChild(img);
-  }
+  // if (currentQuestion.hasOwnProperty("img")) {
+  //   console.log(currentQuestion.img);
+  //   const img = document.createElement("img");
+  //   img.src = currentQuestion.img;
+  //   questionText.appendChild(img);
+  // }
 
   // set options
   // get the length of the list of options
@@ -89,7 +88,6 @@ function getNewQuestion() {
     option.id = optionIndex;
     option.style.animationDelay = animationDelay + "s";
     option.tabIndex = i + 1;
-    console.log(option.tabIndex);
 
     animationDelay = animationDelay + 0.1;
 
@@ -183,7 +181,7 @@ function next() {
   if (questionCounter >= questionLimit) {
     quizOver();
   } else {
-      getNewQuestion();
+    getNewQuestion();
   }
 }
 
@@ -252,3 +250,93 @@ function startQuiz() {
 window.onload = function () {
   homeBox.querySelector(".total-questions").innerHTML = questionLimit;
 };
+
+// Text to speech
+
+//Initialise SppechSythesis API
+const synth = window.speechSynthesis;
+
+//Fetching DOM elements
+const readBtn = document.querySelector("#read-btn");
+// const textInput = document.querySelector("#text-input"); REMOVED
+// const questionText = document.querySelector(".question-text"); ALREADY DEFINED ABOVE
+
+const voiceSelect = document.querySelector("#voice-select");
+const body = document.querySelector("body");
+
+//Initialise the voices array
+let voices = [];
+
+const getVoices = () => {
+  voices = synth.getVoices();
+
+  //Loop through voices and create an option for each one
+  voices.forEach((voice) => {
+    //Create option element for each voice
+    const option = document.createElement("option");
+    //Fill option with voice and language
+    option.textContent = voice.lang + " (" + voice.name + ")";
+    //Set required option attributes
+    option.setAttribute("data-lang", voice.lang);
+    option.setAttribute("data-name", voice.name);
+    voiceSelect.appendChild(option);
+    option.style.fontSize = "0.9rem";
+    // if(option.data-lang === fr-FR ){
+    //   option.setAttribute("selected");
+    // }
+  });
+};
+
+getVoices();
+
+//the following code is required in order to get the voices.
+if (synth.onvoiceschanged !== undefined) {
+  synth.onvoiceschanged = getVoices;
+}
+
+//Speak
+const speak = () => {
+  //Check if already speaking
+  if (synth.speaking) {
+    console.error("Already speaking...");
+    return;
+  }
+  if (questionText.textContent !== "") {
+    //Get text to speak
+    const speakText = new SpeechSynthesisUtterance(questionText.textContent);
+
+    //Speak end
+    speakText.onend = (e) => {
+      console.log("Finished speaking");
+    };
+    //Speak error
+    speakText.onerror = (e) => {
+      console.error("Something went wrong");
+    };
+    //Determining which voice to use to speak
+    const selectedVoice =
+    "Google français";
+    console.log(questionText.textContent);
+
+    //loop through the voices and if the current iteration matches what we selected then use that voice
+    voices.forEach((voice) => {
+      if (voice.name === selectedVoice) {
+        speakText.voice = voice;
+        console.log(voice);
+      }
+    });
+
+    //Speak
+    synth.speak(speakText);
+  }
+};
+
+//Event listeners
+// Text form submission
+readBtn.addEventListener("click", (e) => {
+  speak();
+  questionText.blur();
+});
+
+//Voice select change
+voiceSelect.addEventListener("change", (e) => speak());

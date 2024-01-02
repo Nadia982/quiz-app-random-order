@@ -35,7 +35,7 @@ const questions = [
 
   {
     id: 6,
-    q: "L'arrière petite fille (f)",
+    q: "L'arrière petite fille (féminin)",
     options: ["Behind the little daughter", "Great niece", "Great granddaughter", "Granddaughter"],
     answer: 2,
   },

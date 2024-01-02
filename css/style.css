@@ -131,9 +131,12 @@ color: inherit;
   gap: .7rem;  
 }
 
+#voice-select {
+  display: none;
+}
+
 .quiz-box .option-container .option {
   background-color: #ccc;
-  /* background-color: purple; */
   padding: 0.8rem;
   font-size: 1.15rem;
   line-height: 1.3;
