@@ -193,7 +193,7 @@ const questions = [
   {
     id: 31,
     q: "Tout/tous/toute/toutes",
-    options: ["All", "took", "take"],
+    options: ["All", "Took", "Everyone"],
     answer: 0,
   },
   {

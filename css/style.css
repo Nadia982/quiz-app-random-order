@@ -86,6 +86,10 @@ button:disabled {
   display: inline-block;
 }
 
+.btn:focus, .btn:hover{
+  filter: brightness(80%);
+}
+
 .quiz-box .next-and-answer-indicator-container {
   display: flex;
   align-items: center;
@@ -155,10 +159,6 @@ button:disabled {
   position: relative;
   overflow: hidden;
 }
-
-/* .quiz-box .option-container .option:focus {
-    border: 2px solid orange;
-} */
 
 .quiz-box .option-container .option.already-answered {
   pointer-events: none;
@@ -287,10 +287,6 @@ button:disabled {
 
 .quiz-box.hide {
   display: none;
-}
-
-.btn:hover {
-  background-color: #007d71;
 }
 
 @media (max-width: 480px) {

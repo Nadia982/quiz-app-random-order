@@ -7,6 +7,7 @@ const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const nextButton = document.querySelector(".next-btn");
+const button = document.querySelector(".btn");
 const questionLimit = 10;
 
 let questionCounter = 0;
@@ -26,8 +27,6 @@ function setAvailableQuestions() {
 
 //set question number, question text and answer options
 function getNewQuestion() {
-  readBtn.tabIndex = -1;
-
   nextButton.classList.add("hide");
   //set question number
   questionNumber.innerHTML = `Question ${
