@@ -156,6 +156,10 @@ button:disabled {
   overflow: hidden;
 }
 
+/* .quiz-box .option-container .option:focus {
+    border: 2px solid orange;
+} */
+
 .quiz-box .option-container .option.already-answered {
   pointer-events: none;
 }

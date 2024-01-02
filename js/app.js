@@ -26,6 +26,8 @@ function setAvailableQuestions() {
 
 //set question number, question text and answer options
 function getNewQuestion() {
+  readBtn.tabIndex = -1;
+
   nextButton.classList.add("hide");
   //set question number
   questionNumber.innerHTML = `Question ${
@@ -36,7 +38,7 @@ function getNewQuestion() {
   const questionIndex =
     availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
   currentQuestion = questionIndex;
-//set question text
+  //set question text
   questionText.innerHTML = currentQuestion.q;
   setTimeout(speak, 500);
 
@@ -69,26 +71,24 @@ function getNewQuestion() {
     availableOptions.push(i);
   }
 
-  //create options in html
   let animationDelay = 0.1;
 
+  //create options in html
   for (let i = 0; i < optionsLength; i++) {
     const optionIndex =
       availableOptions[Math.floor(Math.random() * availableOptions.length)];
 
     //get the position of optionIndex from availableOptions
-
     const index2 = availableOptions.indexOf(optionIndex);
 
     //remove the “optionIndex” from the availableOptions so that the option does not repeat
-
     availableOptions.splice(index2, 1);
 
     const option = document.createElement("button");
     option.innerHTML = currentQuestion.options[optionIndex];
     option.id = optionIndex;
     option.style.animationDelay = animationDelay + "s";
-    option.tabIndex = i + 1;
+  
 
     animationDelay = animationDelay + 0.1;
 
@@ -106,6 +106,7 @@ function getNewQuestion() {
       }
     }
   }
+  optionContainer.children[0].focus();
   questionCounter++;
 }
 
@@ -119,8 +120,6 @@ function getResult(element) {
     //add a tick mark to the answer indicator
     updateAnswerIndicator("correct");
     correctAnswers++;
-
-    // availableOptions.removeEventListener("keydown", pressEnterToGetResult);
   } else {
     // add red colour if user selects incorrect option
     element.classList.add("incorrect");
@@ -311,8 +310,7 @@ const speak = () => {
       console.error("Something went wrong");
     };
     //Determining which voice to use to speak
-    const selectedVoice =
-    "Google français";
+    const selectedVoice = "Google français";
     console.log(questionText.textContent);
 
     //loop through the voices and if the current iteration matches what we selected then use that voice
