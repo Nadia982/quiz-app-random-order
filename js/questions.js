@@ -64,6 +64,86 @@ const questions = [
     options: ["Chips", "Fried", "Fretting", "Cakes"],
     answer: 0,
   },
+  {
+    id: 10,
+    q: "Les frites (féminin)",
+    options: ["Chips", "Fried", "Fretting", "Cakes"],
+    answer: 0,
+  },
+  {
+    id: 11,
+    q: "Bienvenue",
+    options: ["Welcome", "Good", "Benefit"],
+    answer: 0,
+  },
+  {
+    id: 12,
+    q: "Je peux vous aider?",
+    options: ["Can I help you?", "Can she help?", "Can I attend?"],
+    answer: 0,
+  },
+  {
+    id: 13,
+    q: "Pouvoir",
+    options: ["To be able to", "To say", "To play"],
+    answer: 0,
+  },
+  {
+    id: 14,
+    q: "Je peux y aller?",
+    options: ["Can I go there", "Can I stay there?", "Can I go?"],
+    answer: 0,
+  },
+  {
+    id: 15,
+    q: "Je dirais que",
+    options: ["I would say that", "I think that", "I would dare to"],
+    answer: 0,
+  },
+  {
+    id: 16,
+    q: "Je voudrais",
+    options: ["I would like", "I want", "I will do"],
+    answer: 0,
+  },
+  {
+    id: 17,
+    q: "Vouloir",
+    options: ["To want to", "To be able to", "To vanish"],
+    answer: 0,
+  },
+  {
+    id: 18,
+    q: "Je veux",
+    options: ["I want", "I will", "I went"],
+    answer: 0,
+  },
+  {
+    id: 19,
+    q: "Je suis allé",
+    options: ["I went (masculine)", "I went (feminine)", "Alleyway"],
+    answer: 0,
+  },
+  {
+    id: 20,
+    q: "devenir",
+    options: ["To become", "To come", "To guess"],
+    answer: 0,
+  },
+  {
+    id: 21,
+    q: "deviner",
+    options: ["To become", "To guess", "Deviate"],
+    answer: 0,
+  },
+  // {
+  //   id: 21,
+  //   q: "exampleToCopy",
+  //   options: ["", "", ""],
+  //   answer: 0,
+  // },
+  
+  
 //example of an image-based question
 // {
 //   id: 11,
