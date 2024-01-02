@@ -32,11 +32,12 @@ function getNewQuestion() {
   questionNumber.innerHTML = `Question ${
     questionCounter + 1
   } of ${questionLimit}`;
-  //set question text
+
   //get random question
   const questionIndex =
     availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
   currentQuestion = questionIndex;
+//set question text
   questionText.innerHTML = currentQuestion.q;
 
   // get the position of "QuestionIndex" from the "AvailableQuestions" array
@@ -331,8 +332,4 @@ const speak = () => {
 // Text form submission
 readBtn.addEventListener("click", (e) => {
   speak();
-  questionText.blur();
 });
-
-//Voice select change
-voiceSelect.addEventListener("change", (e) => speak());
