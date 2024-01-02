@@ -260,7 +260,7 @@ button:disabled {
 .result-box table td {
   border: 1px solid #ccc;
   text-align: left;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
 }
 .result-box table td:nth-child(even) {
   width: 1%;
