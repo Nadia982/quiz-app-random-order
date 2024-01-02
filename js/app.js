@@ -139,8 +139,6 @@ function getResult(element) {
     }
   }
   attempt++;
-  // document.addEventListener("keydown", pressEnterForNextQu);
-  // next();
   nextButton.classList.remove("hide");
 }
 
@@ -258,8 +256,6 @@ const synth = window.speechSynthesis;
 
 //Fetching DOM elements
 const readBtn = document.querySelector("#read-btn");
-// const textInput = document.querySelector("#text-input"); REMOVED
-// const questionText = document.querySelector(".question-text"); ALREADY DEFINED ABOVE
 
 const voiceSelect = document.querySelector("#voice-select");
 const body = document.querySelector("body");
