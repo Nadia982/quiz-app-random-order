@@ -263,60 +263,281 @@ const questions = [
     answer: 0,
   },
   // {
-  //   id: 43,
+  //   id: [],
   //   q: "Voici",
   //   options: ["Here is", "Voice", "There is"],
   //   answer: 0,
   // },
   // {
-  //   id: 44,
+  //   id: [],
   //   q: "Voilà",
   //   options: ["There is", "Veil", "Here is"],
   //   answer: 0,
   // },
+  {
+    id: 45,
+    q: "devoir",
+    options: ["to have to", "homework", "development"],
+    answer: 0,
+  },
+  {
+    id: 46,
+    q: "tu dois",
+    options: ["you have to", "you can", "Do your homework"],
+    answer: 0,
+  },
+  {
+    id: 47,
+    q: "D'abord",
+    options: ["first", "board", "overboard"],
+    answer: 0,
+  },
+  {
+    id: 48,
+    q: "pour",
+    options: ["for", "pour", "purse", "form"],
+    answer: 0,
+  },
+  {
+    id: 49,
+    q: "faire",
+    options: ["to do/to make", "ferry", "to ferry", "fair"],
+    answer: 0,
+  },
+  {
+    id: 50,
+    q: "ce que",
+    options: ["that which", "I will", "this one"],
+    answer: 0,
+  },
+  {
+    id: 51,
+    q: "dernier/dernière",
+    options: ["last", "next", "first"],
+    answer: 0,
+  },
+  {
+    id: 52, 
+    q: "le jour", 
+    options: ["the day", "the juice", "the journey"], 
+    answer: 0
+  }, {
+    id: 53, 
+    q: "il faut", 
+    options: ["It is necessary to", "it is faulty", "it fails"], 
+    answer: 0
+  }, {
+    id: 54, 
+    q: "prendre", 
+    options: ["to take", "to be able to", "to present"], 
+    answer: 0
+  }, {
+    id: 55, 
+    q: "de nous", 
+    options: ["of us", "of them", "of you"], 
+    answer: 0
+  }, {
+    id: 56, 
+    q: "de la maison", 
+    options: ["of the house", "of the mansion", "of the manor"], 
+    answer: 0
+  }, {
+    id: 57, 
+    q: "Ensuite", 
+    options: ["then", "followed by", "bathroom"], 
+    answer: 0
+  }, {
+    id: 58, 
+    q: "ta soeur", 
+    options: ["your sister", "my sister", "her sister"], 
+    answer: 0
+  }, {
+    id: 59, 
+    q: "oublier", 
+    options: ["to forget", "to open", "to blow"], 
+    answer: 0
+  }, {
+    id: 60, 
+    q: "N'oublies pas", 
+    options: ["Don't forget", "Don't remember", "Don't open it"], 
+    answer: 0
+  }, {
+    id: 61, 
+    q: "lui envoyer", 
+    options: ["to send him/her", "to send me", "to send them"], 
+    answer: 0
+  }, {
+    id: 62, 
+    q: "une carte postale", 
+    options: ["a postcard", "a letter", "a post office"], 
+    answer: 0
+  }, {
+    id: 63, 
+    q: "ta mère", 
+    options: ["your mother", "my mother", "the mother"], 
+    answer: 0
+  }, {
+    id: 64, 
+    q: "tu devrais", 
+    options: ["you should", "you will deliver", "you need to"], 
+    answer: 0
+  }, {
+    id: 65, 
+    q: "J'ai besoin de", 
+    options: ["I need to", "My best friend is", "I have a best friend"], 
+    answer: 0
+  }, {
+    id: 66, 
+    q: "choisir", 
+    options: ["to choose", "to change", "choosing"], 
+    answer: 0
+  }, {
+    id: 67, 
+    q: "Une boîte", 
+    options: ["a box", "a boat", "a boast"], 
+    answer: 0
+  }, 
   // {
-  //   id: 45,
-  //   q: "",
-  //   options: ["", "", ""],
-  //   answer: 0,
-  // },
-  // {
-  //   id: 46,
-  //   q: "exampleToCopy",
-  //   options: ["", "", ""],
-  //   answer: 0,
-  // },
-  // {
-  //   id: 47,
-  //   q: "exampleToCopy",
-  //   options: ["", "", ""],
-  //   answer: 0,
-  // },
-  // {
-  //   id: 48,
-  //   q: "exampleToCopy",
-  //   options: ["", "", ""],
-  //   answer: 0,
-  // },
-  // {
-  //   id: 49,
-  //   q: "exampleToCopy",
-  //   options: ["", "", ""],
-  //   answer: 0,
-  // },
-  // {
-  //   id: 50,
-  //   q: "exampleToCopy",
-  //   options: ["", "", ""],
-  //   answer: 0,
-  // },
-  // {
-  //   id: 21,
-  //   q: "exampleToCopy",
-  //   options: ["", "", ""],
-  //   answer: 0,
-  // },
-  
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }, {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // }
   
 //example of an image-based question
 // {
