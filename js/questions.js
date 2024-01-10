@@ -91,7 +91,7 @@ const questions = [
   {
     id: 14,
     q: "Je peux y aller?",
-    options: ["Can I go there", "Can I stay there?", "Can I go?"],
+    options: ["Can I go there?", "Can I stay there?", "Can I go?"],
     answer: 0,
   },
   {
@@ -397,6 +397,108 @@ const questions = [
     options: ["a box", "a boat", "a boast"], 
     answer: 0
   }, 
+  {
+    id: 68, 
+    q: "Oublier", 
+    options: ["To forget", "Overblown", "To allow"], 
+    answer: 0
+  }, {
+    id: 69, 
+    q: "N'oublies pas", 
+    options: ["Don't forget", "Don't overrun", "Don't blink"], 
+    answer: 0
+  }, {
+    id: 70, 
+    q: "La grand-mère", 
+    options: ["The grandmother", "The mother", "The tall mother"], 
+    answer: 0
+  }, {
+    id: 71, 
+    q: "Penser", 
+    options: ["To think", "Pensive", "Thought"], 
+    answer: 0
+  }, {
+    id: 72, 
+    q: "Ton père", 
+    options: ["Your father", "Your brother", "Your pear"], 
+    answer: 0
+  }, {
+    id: 73, 
+    q: "Aussi", 
+    options: ["Also", "Automatic", "Else"], 
+    answer: 0
+  }, {
+    id: 74, 
+    q: "Trouver", 
+    options: ["To find", "To trade", "To follow"], 
+    answer: 0
+  }, {
+    id: 75, 
+    q: "Penser à", 
+    options: ["To think of", "Pending", "To be pending"], 
+    answer: 0
+  }, {
+    id: 76, 
+    q: "Quelle chance", 
+    options: ["What good luck", "What a change", "Is there a chance?"], 
+    answer: 0
+  }, {
+    id: 77, 
+    q: "Pour nous", 
+    options: ["For us", "For you", "For them"], 
+    answer: 0
+  }, {
+    id: 78, 
+    q: "Quel dommage", 
+    options: ["What a shame", "What is the damage?", "What a danger"], 
+    answer: 0
+  }, {
+    id: 79, 
+    q: "Casse-pieds", 
+    options: ["A pain in the neck", "Cassette", "Broke my feet"], 
+    answer: 0
+  }, {
+    id: 80, 
+    q: "Puis-je ...?", 
+    options: ["Can I...?", "Can you...?", "I can..."], 
+    answer: 0
+  }, {
+    id: 81, 
+    q: "Les profs (masculin)", 
+    options: ["The teachers", "The profession", "The proverb"], 
+    answer: 0
+  }, {
+    id: 82, 
+    q: "Est-ce que je peux...?", 
+    options: ["Can I...?", "When can I...?", "What can I...?"], 
+    answer: 0
+  }, {
+    id: 83, 
+    q: "Un pouvoir", 
+    options: ["A power", "To be able to", "A powder"], 
+    answer: 0
+  }, {
+    id: 84, 
+    q: "Une pomme", 
+    options: ["An apple", "A pom-pom", "A cream"], 
+    answer: 0
+  }, {
+    id: 85, 
+    q: "La qualité", 
+    options: ["The quality", "Qualified", "Cauliflower"], 
+    answer: 0
+  }, {
+    id: 86, 
+    q: "Chercher", 
+    options: ["To look for", "To cherish", "To teach"], 
+    answer: 0
+  }, 
+  {
+    id: 87, 
+    q: "Souvent", 
+    options: ["Often", "Solvent", "To solve"], 
+    answer: 0
+  }, 
   // {
   //   id: [], 
   //   q: "", 
@@ -432,107 +534,8 @@ const questions = [
   //   q: "", 
   //   options: ["last", "next", "first"], 
   //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
+  // }, 
+  // {
   //   id: [], 
   //   q: "", 
   //   options: ["last", "next", "first"], 
