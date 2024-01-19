@@ -464,7 +464,7 @@ const questions = [
     answer: 0
   }, {
     id: 81, 
-    q: "Les profs (masculin)", 
+    q: "Les profs", 
     options: ["The teachers", "The profession", "The proverb"], 
     answer: 0
   }, {
@@ -499,48 +499,109 @@ const questions = [
     options: ["Often", "Solvent", "To solve"], 
     answer: 0
   }, 
+  {
+    id: 88, 
+    q: "demander", 
+    options: ["to ask", "I demand", "asked"], 
+    answer: 0
+  }, 
+  {
+    id: 89, 
+    q: "Qu'est ce qui t'énerve avec...", 
+    options: ["What annoys you about ...?", "Why did you annoy...?", "Why are you annoyed?"], 
+    answer: 0
+  }, {
+    id: 90, 
+    q: "utiliser", 
+    options: ["To use", "utilities", "utensils"], 
+    answer: 0
+  }, {
+    id: 91, 
+    q: "Je utilise", 
+    options: ["I use", "I used", "I will use"], 
+    answer: 0
+  }, {
+    id: 92, 
+    q: "Je vais utiliser", 
+    options: ["I will use", "I am using", "I used"], 
+    answer: 0
+  }, {
+    id: 93, 
+    q: "J'ai utilisé", 
+    options: ["I used", "I have a use for", "I am using"], 
+    answer: 0
+  }, {
+    id: 94, 
+    q: "faire ses devoirs", 
+    options: ["To do his homework", "To be able to", "He will do it"], 
+    answer: 0
+  }, 
+  {
+    id: 95, 
+    q: "le cahier", 
+    options: ["The exercise book", "The cashier", "The book"], 
+    answer: 0
+  },
+  {
+    id: 96, 
+    q: "exactement", 
+    options: ["exactly", "about", "exact"], 
+    answer: 0
+  },
+  {
+    id: 97, 
+    q: "la réponse", 
+    options: ["the answer", "to answer", "she answers"], 
+    answer: 0
+  },
+  {
+    id: 98, 
+    q: "les mêmes réponses", 
+    options: ["the same answers", "the even answers"], 
+    answer: 0
+  },
+  {
+    id: 99, 
+    q: "Il dit que", 
+    options: ["He says that", "He says", "They say that"], 
+    answer: 0
+  },
+  {
+    id: 100, 
+    q: "c'est moi", 
+    options: ["It's me", "It's mine"], 
+    answer: 0
+  },
+  {
+    id: 101, 
+    q: "c'est à moi", 
+    options: ["It's mine", "it's me"], 
+    answer: 0
+  },
+  {
+    id: 102, 
+    q: "copier", 
+    options: ["to copy", "I copy", "to cope"], 
+    answer: 0
+  },
   // {
   //   id: [], 
   //   q: "", 
   //   options: ["last", "next", "first"], 
   //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, {
-  //   id: [], 
-  //   q: "", 
-  //   options: ["last", "next", "first"], 
-  //   answer: 0
-  // }, 
+  // },
   // {
   //   id: [], 
   //   q: "", 
   //   options: ["last", "next", "first"], 
   //   answer: 0
-  // }
+  // },
+  // {
+  //   id: [], 
+  //   q: "", 
+  //   options: ["last", "next", "first"], 
+  //   answer: 0
+  // },
   
 //example of an image-based question
 // {
